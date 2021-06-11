@@ -29,6 +29,7 @@ This EFI specifically has patches for:
 - Native power managment
 - Audio
 - Full USB support including 3.0 speeds and port personalities
+- Ethernet
 
 #### What doesn't work (or untested):
 -Motherboard DisplayPort (untested)
