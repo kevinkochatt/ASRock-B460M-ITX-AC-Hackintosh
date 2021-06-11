@@ -32,9 +32,9 @@ This EFI specifically has patches for:
 - Ethernet
 
 #### What doesn't work (or untested):
--Motherboard DisplayPort (untested)
--Keyboard/ Mouse wake: working to solve this now, for now only power button can wake on my system...
--Hardware DRM (My system does not have a dGPU for this, just use chrome)
+- Motherboard DisplayPort (untested)
+- Keyboard/ Mouse wake: working to solve this now, for now only power button can wake on my system...
+- Hardware DRM (My system does not have a dGPU for this, just use chrome)
 
 ### Patch Guides
 
