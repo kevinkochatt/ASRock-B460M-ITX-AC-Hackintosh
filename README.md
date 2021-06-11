@@ -21,4 +21,4 @@ This EFI specifically has patches for:
 
 #### What works:
 -WiFi & BT 4.1
-  -erfw
+ -ef
