@@ -1,12 +1,15 @@
 # ASRock-B460M-ITX-AC-Hackintosh
 **EFI files for OpenCore 0.7.0 on macOS Big Sur 11.4**
 
+![Screen Shot 2021-06-10 at 10 13 02 PM](https://user-images.githubusercontent.com/69612780/121631021-8b119a80-ca3b-11eb-914e-001e83697485.png)
+
 This EFI specifically has patches for:
-- UHD 630 iGPU patch (to fix sleep)
-- AppleALC Audio ID for ALC887
-- Fixing USB 3.0 on 400 series controller
+- UHD 630 iGPU patch (to fix sleep, use platform-id 00009B3E)
+- AppleALC Audio ID for ALC887 (Use ID 12)
+- Fixing USB 3.0 on 400 series controller with updated fork of XHCIUnsupported.kext
 - Correct USB mapping (including front IO)
-* I noticed my iGPU patch was different from other b460m itx/ac hackintoshes that could be related to displayport output, I do not have a displayport monitor so i cannot verify any issues realted to it.
+- Instant Wake (Use SSDT-GPRW + plist patch)
+* I noticed my iGPU patch was different from other b460m itx/ac hackintoshes that could be related to displayport output, I do not have a displayport monitor so i cannot verify any issues related to it.
 
 #### Specifications
 -Storage: WD Black SN750 1TB PCIe SSD
@@ -21,4 +24,35 @@ This EFI specifically has patches for:
 
 #### What works:
 -WiFi & BT 4.1
- -ef
+- Airdrop and all continutiy features
+- iMessage & FaceTime (the reference config.plist does not have a serial number, MLB or ROM for these, you can enter your own)
+- Native power managment
+- Audio
+- Full USB support including 3.0 speeds and port personalities
+
+#### What doesn't work (or untested):
+-Motherboard DisplayPort (untested)
+-Keyboard/ Mouse wake: working to solve this now, for now only power button can wake on my system...
+-Hardware DRM (My system does not have a dGPU for this, just use chrome)
+
+### Patch Guides
+
+##### UHD 630 iGPU (Fix Sleep) & AppleALC Audio ID patches
+![Screen Shot 2021-06-10 at 10 36 07 PM](https://user-images.githubusercontent.com/69612780/121631429-53572280-ca3c-11eb-9ea2-32326a3dc2e5.png)
+Apply the device properties above via ProperTree to your Config.Plist
+
+##### Fix USB 3.0 and port mapping
+1. Download this fork of USBInjectAll, and only add the XHCIUnsupported to your OC kexts: https://github.com/daliansky/OS-X-USB-Inject-All
+(This fork adds support for the 400 series controller 8086:3af)
+2. Add the USB-Map.kext from my repo (I mapped manually, ports are labelled with port personalities)
+3. OC clean snapshot your config and you are good to go, here is mine verified working:
+![Screen Shot 2021-06-10 at 9 48 20 PM](https://user-images.githubusercontent.com/69612780/121632171-be552900-ca3d-11eb-95bf-09791735e4ec.png)
+
+##### Instant Wake (Fix Sleep)
+This is the issue where when your computer sleeps it wakes up a few seconds later, the fans spin back up and the RGB comes on again, sometimes in a cycle of the fans and RGB powering on and off during sleep... beware right now using the SSDT-GPRW breaks keyboard/mouse wake and you will have to wake using power button.
+1. Add the SSDT-GPRW from my repo to your ACPI
+2. Add this to the ACPI patch section of your config.plist:
+![Screen Shot 2021-06-10 at 10 54 08 PM](https://user-images.githubusercontent.com/69612780/121632789-df6a4980-ca3e-11eb-9f87-f4faf61740db.png)
+3. Now just OC clean snapshot your config and done.
+ 
+
