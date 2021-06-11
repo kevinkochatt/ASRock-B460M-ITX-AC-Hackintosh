@@ -1,5 +1,5 @@
 # ASRock-B460M-ITX-AC-Hackintosh
-**EFI files for OpenCore 0.7.0 on macOS Big Sur 11.4**
+**EFI files for OpenCore 0.7.0 on macOS Big Sur 11.4, iMac 20,1 SMBIOS**
 
 ![Screen Shot 2021-06-10 at 10 13 02 PM](https://user-images.githubusercontent.com/69612780/121631021-8b119a80-ca3b-11eb-914e-001e83697485.png)
 
