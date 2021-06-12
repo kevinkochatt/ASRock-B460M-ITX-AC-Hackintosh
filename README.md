@@ -9,7 +9,10 @@ This EFI specifically has patches for:
 - Fixing USB 3.0 on 400 series controller with updated fork of XHCIUnsupported.kext
 - Correct USB mapping (including front IO)
 - Instant Wake (Use SSDT-GPRW + plist patch)
-* I noticed my iGPU patch was different from other b460m itx/ac hackintoshes that could be related to displayport output, I do not have a displayport monitor so i cannot verify any issues related to it.
+
+###### Special troubleshooting notes
+1. I noticed my iGPU patch was different from other b460m itx/ac hackintoshes that could be related to displayport output, I do not have a displayport monitor so i cannot verify any issues related to it.
+2. Including the nvmefix.kext on my system caused constant and random kernel panics at boot, requiring multiple boot loop cycles before entering macOS, so beware... I just removed it.
 
 #### Specifications
 - Storage: WD Black SN750 1TB PCIe SSD
@@ -45,9 +48,9 @@ Apply the device properties above via ProperTree to your Config.Plist
 ##### Fix USB 3.0 and port mapping
 1. Download this fork of USBInjectAll, and only add the XHCIUnsupported to your OC kexts: https://github.com/daliansky/OS-X-USB-Inject-All
 (This fork adds support for the 400 series controller 8086:3af)
-2. Add the USB-Map.kext from my repo (I mapped manually, ports are labelled with port personalities)
+2. Add the USBPorts.kext from my repo (I mapped with Hackintool, my bluetooth adapter is in the comment for port HS09, you can change it if you want but doesn't do anything.)
 3. OC clean snapshot your config and you are good to go, here is mine verified working:
-![Screen Shot 2021-06-10 at 9 48 20 PM](https://user-images.githubusercontent.com/69612780/121632171-be552900-ca3d-11eb-95bf-09791735e4ec.png)
+![Screen Shot 2021-06-12 at 5 16 37 PM](https://user-images.githubusercontent.com/69612780/121790953-fa090380-cba1-11eb-9d28-e3a488776b18.png)
 
 ##### Instant Wake (Fix Sleep)
 This is the issue where when your computer sleeps it wakes up a few seconds later, the fans spin back up and the RGB comes on again, sometimes in a cycle of the fans and RGB powering on and off during sleep... beware right now using the SSDT-GPRW breaks keyboard/mouse wake and you will have to wake using power button.
