@@ -51,7 +51,7 @@ Apply the device properties above via ProperTree to your Config.Plist
 2. Add the USBPorts.kext from my repo (I mapped with Hackintool, my bluetooth adapter is in the comment for port HS09, you can change it if you want but doesn't do anything.)
 3. OC clean snapshot your config and you are good to go, here is mine verified working:
 ![Screen Shot 2021-06-12 at 5 16 37 PM](https://user-images.githubusercontent.com/69612780/121790953-fa090380-cba1-11eb-9d28-e3a488776b18.png)
-
+(Hackintool reports a 300 series controller, but dont worry about that)
 ##### Instant Wake (Fix Sleep)
 This is the issue where when your computer sleeps it wakes up a few seconds later, the fans spin back up and the RGB comes on again, sometimes in a cycle of the fans and RGB powering on and off during sleep... beware right now using the SSDT-GPRW breaks keyboard/mouse wake and you will have to wake using power button.
 1. Add the SSDT-GPRW from my repo to your ACPI
