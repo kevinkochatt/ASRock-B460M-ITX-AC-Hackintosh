@@ -47,7 +47,7 @@ Apply the device properties above via ProperTree to your Config.Plist
 
 ##### Fix USB 3.0 and port mapping
 1. Download this fork of USBInjectAll, and only add the XHCIUnsupported to your OC kexts: https://github.com/daliansky/OS-X-USB-Inject-All
-(This fork adds support for the 400 series controller 8086:3af)
+(This fork adds support for the unsupported 400 series controller found on this board, 8086:3af)
 2. Add the USBPorts.kext from my repo (I mapped with Hackintool, my bluetooth adapter is in the comment for port HS09, you can change it if you want but doesn't do anything.)
 3. OC clean snapshot your config and you are good to go, here is mine verified working:
 ![Screen Shot 2021-06-12 at 5 16 37 PM](https://user-images.githubusercontent.com/69612780/121790953-fa090380-cba1-11eb-9d28-e3a488776b18.png)
