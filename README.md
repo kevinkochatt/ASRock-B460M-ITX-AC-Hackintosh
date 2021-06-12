@@ -44,7 +44,7 @@ This EFI specifically has patches for:
 ##### UHD 630 iGPU (Fix Sleep) & AppleALC Audio ID patches
 ![Screen Shot 2021-06-10 at 10 36 07 PM](https://user-images.githubusercontent.com/69612780/121631429-53572280-ca3c-11eb-9ea2-32326a3dc2e5.png)
 
-Apply the device properties above via ProperTree to your Config.Plist
+Apply the device properties above via ProperTree to your Config.Plist, add igfxonln=1 to boot-args.
 
 ##### Fix USB 3.0 and port mapping
 1. Download this fork of USBInjectAll, and only add the XHCIUnsupported to your OC kexts: https://github.com/daliansky/OS-X-USB-Inject-All
