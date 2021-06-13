@@ -9,7 +9,7 @@ This EFI specifically has patches for:
 - Fixing USB 3.0 on 400 series controller with updated fork of XHCIUnsupported.kext
 - Correct USB mapping (including front IO)
 - Instant Wake due to Bluetooth USB port on same hub (Use SSDT-GPRW + plist patch)
- - A possible solution for this without SSDT-GPRW (that breaks USB wake) could be to wire the D+/- pins from the mini-pcie adapter to a cable connecting to the extra unused USB 2.0 header, and then disabling the HS09 port and mapping whatever port the bluetooth is connected to on the extra header to internal. I myself probably won't try this though.
+  ...A possible solution for this without SSDT-GPRW (that breaks USB wake) could be to wire the D+/- pins from the mini-pcie adapter to a cable connecting to the extra unused USB 2.0 header, and then disabling the HS09 port and mapping whatever port the bluetooth is connected to on the extra header to internal. I myself probably won't try this though.
 
 ###### Special troubleshooting notes
 1. I noticed my iGPU patch was different from other b460m itx/ac hackintoshes that could be related to displayport output, I do not have a displayport monitor so i cannot verify any issues related to it.
