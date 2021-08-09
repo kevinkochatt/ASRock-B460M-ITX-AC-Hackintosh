@@ -37,7 +37,7 @@ This EFI specifically has patches for:
 
 #### What doesn't work (or untested):
 - Motherboard DisplayPort (untested)
-- Keyboard/ Mouse wake: working to solve this now, for now only power button can wake on my system...
+- Keyboard/ Mouse wake: due to my BT card, suspected to be due to BT not having seperate USB hub or controller...
 - Hardware DRM (My system does not have a dGPU for this, just use chrome)
 
 ### Patch Guides
