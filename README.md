@@ -1,9 +1,10 @@
 # ASRock-B460M-ITX-AC-Hackintosh
-**EFI files for OpenCore 0.7.0 on macOS Big Sur 11.4, iMac 20,1 SMBIOS**
+**EFI files for OpenCore 0.7.4 on macOS Monterey 12.0.1, iMac 20,1 SMBIOS**
 
 ![Screen Shot 2021-06-10 at 10 13 02 PM](https://user-images.githubusercontent.com/69612780/121631021-8b119a80-ca3b-11eb-914e-001e83697485.png)
 
 This EFI specifically has patches for:
+-Fixing Wi-Fi (stuck on apple logo) for AirportBrcmFixup.kext [needed for BCM94352HMB card]
 - UHD 630 iGPU patch (to fix sleep, use platform-id 00009B3E)
 - AppleALC Audio ID for ALC887 (Use ID 12)
 - Fixing USB 3.0 on 400 series controller with updated fork of XHCIUnsupported.kext
@@ -41,6 +42,12 @@ This EFI specifically has patches for:
 - Hardware DRM (My system does not have a dGPU for this, just use chrome)
 
 ### Patch Guides
+
+##### Fix Wi-Fi (stuck on apple logo) for AirportBrcmFixup.kext
+You might have missed it in the notes, but for big sur and up:
+1. Right-click the AirportBrcmFixup.kext and "show package contents"
+2. In Contents/PlugIns, DELETE AirPortBrcm4360_Injector.kext
+3. Now you can use the kext in opencore and boot fine.
 
 ##### UHD 630 iGPU (Fix Sleep) & AppleALC Audio ID patches
 ![Screen Shot 2021-06-10 at 10 36 07 PM](https://user-images.githubusercontent.com/69612780/121631429-53572280-ca3c-11eb-9ea2-32326a3dc2e5.png)
