@@ -1,7 +1,7 @@
 # ASRock-B460M-ITX-AC-Hackintosh
 **EFI files for OpenCore 0.7.4 on macOS Monterey 12.0.1, iMac 20,1 SMBIOS**
 
-![Screen Shot 2021-06-10 at 10 13 02 PM](https://user-images.githubusercontent.com/69612780/121631021-8b119a80-ca3b-11eb-914e-001e83697485.png)
+![Screen Shot 2021-10-26 at 9 34 18 PM](https://user-images.githubusercontent.com/69612780/138995583-6d039e63-e44d-4f1e-977c-4f60dcb7d246.png)
 
 This EFI specifically has patches for:
 -Fixing Wi-Fi (stuck on apple logo) for AirportBrcmFixup.kext [needed for BCM94352HMB card]
