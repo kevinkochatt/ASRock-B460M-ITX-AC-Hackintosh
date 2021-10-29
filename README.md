@@ -4,7 +4,7 @@
 ![Screen Shot 2021-10-26 at 9 34 18 PM](https://user-images.githubusercontent.com/69612780/138995583-6d039e63-e44d-4f1e-977c-4f60dcb7d246.png)
 
 This EFI specifically has patches for:
--Fixing Wi-Fi (stuck on apple logo) for AirportBrcmFixup.kext [needed for BCM94352HMB card]
+- Fixing Wi-Fi (stuck on apple logo) for AirportBrcmFixup.kext [needed for BCM94352HMB card]
 - UHD 630 iGPU patch (to fix sleep, use platform-id 00009B3E)
 - AppleALC Audio ID for ALC887 (Use ID 12)
 - Fixing USB 3.0 on 400 series controller with updated fork of XHCIUnsupported.kext
