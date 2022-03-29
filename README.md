@@ -1,5 +1,5 @@
 # ASRock-B460M-ITX-AC-Hackintosh
-**EFI files for OpenCore 0.7.4 on macOS Monterey 11.6.5, iMac 20,1 SMBIOS**
+**EFI files for OpenCore 0.7.4 on macOS Big Sur 11.6.5, iMac 20,1 SMBIOS**
 
 <img width="698" alt="image" src="https://user-images.githubusercontent.com/69612780/160714600-249ba66f-cae3-490e-b002-6dbdaa34540f.png">
 
